@@ -1,0 +1,22 @@
+<%- layout('layouts/boilerplate') %> 
+<form action="/boards" method="post">
+    <div class="new-form">
+        <div>
+            <label for="title">Title</label>
+            <textarea type="text" name="title" required></textarea>
+        </div>
+        <div>
+            <label for="body">Body</label>
+            <textarea type="text" name="body" required></textarea>
+        </div>
+        <select name="category" id="" required>
+            <option value="Work">Work</option>
+            <option value="Question">Question</option>
+            <option value="Gaming">Gaming</option>
+            <option value="Sports">Sports</option>
+            <option value="Misc.">Misc.</option>
+        </select>
+        <button>Post</button>
+    </div>
+</form>
+<script src="/scripts/textarea-resize.js"></script>

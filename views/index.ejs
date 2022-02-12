@@ -1,0 +1,11 @@
+<%- layout('layouts/boilerplate') %> 
+<% for (board of boards) {%> 
+    <div class="board-preview">
+        <h2><%= board.title %></h1>
+        <p class="tag"><span><%= board.category %></span></p>
+        <p>Posted on <%= board.date.toLocaleString() %></p>
+        <form action="boards/<%= board.id %>" method="get">
+            <button>View board</button>
+        </form>
+    </div>
+    <% } %> 

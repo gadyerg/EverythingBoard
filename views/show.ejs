@@ -1,0 +1,18 @@
+<%- layout('layouts/boilerplate') %>
+<div class="board-and-comments">
+    <div class="seperator">
+        <h1><%= board.title %> </h1>
+        <p><%= board.body %> </p>
+        <form action="/boards/<%= board.id%>/comments" method="post">
+            <textarea name="comment" id="comment" cols="1" rows="1" required></textarea>
+            <button>Reply</button>
+        </form>
+    </div>
+    <% for (comment of board.comments) { %>
+        <div class="seperator">
+            <p><%= comment.comment %></p>
+            <p class="date-text">Commented on <%= comment.date.toLocaleString()%></p>
+        </div>
+        <% } %> 
+</div>
+<script src="/scripts/textarea-resize.js"></script>
